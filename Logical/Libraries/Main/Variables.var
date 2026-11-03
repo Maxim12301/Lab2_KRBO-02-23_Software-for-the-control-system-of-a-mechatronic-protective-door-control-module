@@ -1,0 +1,7 @@
+VAR
+	btnDirPrev : BOOL := FALSE;
+	btnDir : BOOL := FALSE;
+	stateMachine : DriveStateMashine := (0);
+	doorSM : DoorStateMashine := (0);
+	ledSM : LedStateMashine := (0);
+END_VAR
