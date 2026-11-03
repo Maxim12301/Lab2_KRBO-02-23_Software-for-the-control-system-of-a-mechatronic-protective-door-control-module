@@ -1,0 +1,1 @@
+# Lab2_KRBO-02-23_Software-for-the-control-system-of-a-mechatronic-protective-door-control-module
