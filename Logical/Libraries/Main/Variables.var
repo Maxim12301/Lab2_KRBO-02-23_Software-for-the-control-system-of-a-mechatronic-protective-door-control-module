@@ -1,5 +1,9 @@
 VAR
+	s3Prev : BOOL := FALSE;
+	s2Prev : BOOL := FALSE;
 	btnDirPrev : BOOL := FALSE;
+	s1Prev : BOOL := FALSE;
+	s0Prev : BOOL := FALSE;
 	btnDir : BOOL := FALSE;
 	stateMachine : DriveStateMashine := (0);
 	doorSM : DoorStateMashine := (0);

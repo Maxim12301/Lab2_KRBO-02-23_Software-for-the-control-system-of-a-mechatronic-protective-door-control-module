@@ -44,5 +44,9 @@ FUNCTION_BLOCK DoorStateMashine
 	END_VAR
 	VAR
 		doorState : UINT;
+		s0Prev : BOOL;
+		s1Prev : BOOL;
+		s2Prev : BOOL;
+		s3Prev : BOOL;
 	END_VAR
 END_FUNCTION_BLOCK
