@@ -1,5 +1,3 @@
-
-
 #include <bur/plctypes.h>
 #ifdef __cplusplus
 	extern "C"
