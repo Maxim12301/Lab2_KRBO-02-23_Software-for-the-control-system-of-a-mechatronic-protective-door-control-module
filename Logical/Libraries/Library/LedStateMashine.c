@@ -18,9 +18,11 @@
 #define ST_NEG 7
 #define ST_DEC_POS 8
 #define ST_DEC_NEG 9
+#define ST_WAIT 10
 
-#define CYCLE_MS 10
+#define CYCLE_MS 2
 #define HALF_CYCLES (500 / CYCLE_MS)
+
 void LedStateMashine(struct LedStateMashine* inst)
 {
 	if (inst->state == ST_UNKNOWN) {
@@ -42,21 +44,31 @@ void LedStateMashine(struct LedStateMashine* inst)
 			break;
 
 		case ST_ACC_POS:
-		case ST_DEC_NEG:
 			inst->led1 = 1; inst->led2 = 0; inst->led3 = 0; inst->led4 = 0;
 			break;
 
 		case ST_POS:
-		case ST_NEG:
 			inst->led1 = 1; inst->led2 = 1; inst->led3 = 0; inst->led4 = 0;
 			break;
 
-		case ST_ACC_NEG:
 		case ST_DEC_POS:
 			inst->led1 = 1; inst->led2 = 1; inst->led3 = 1; inst->led4 = 0;
 			break;
 
+		case ST_ACC_NEG:
+			inst->led1 = 0; inst->led2 = 0; inst->led3 = 0; inst->led4 = 1;
+			break;
+
+		case ST_NEG:
+			inst->led1 = 0; inst->led2 = 0; inst->led3 = 1; inst->led4 = 1;
+			break;
+
+		case ST_DEC_NEG:
+			inst->led1 = 0; inst->led2 = 1; inst->led3 = 1; inst->led4 = 1;
+			break;
+
 		case ST_CLOSE:
+		case ST_OPEN:
 			inst->led1 = 1; inst->led2 = 1; inst->led3 = 1; inst->led4 = 1;
 			break;
 
